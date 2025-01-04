@@ -1,5 +1,5 @@
 import { createElelement } from "../functions/dom.js"
-
+import { baseurl } from "../functions/api.js"
 /**
  * @typedef {object} Message
  * @property {number} id
@@ -76,7 +76,7 @@ export class MessageList {
             body: `{"text":"${text}"}`
           };
           
-          fetch('http://localhost:3000/api/add-message', options)
+          fetch(baseurl()+'/api/add-message', options)
             .then(response => response.json())
             .then(response => {
                 const item = new MessageListItem(message)

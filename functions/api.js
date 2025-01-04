@@ -7,3 +7,7 @@ export async function fetchJSON(url,options={}){
     }
     throw new Error("erreur serveur",{cause:response})
 }
+
+export function baseurl(){
+    return "https://joel.ulrichanani.com"
+}
